@@ -1,0 +1,5 @@
+create table users (id int auto_increment primary key, name varchar(60) unique not null, email varchar(70) unique  not null, verified boolean default FALSE, password text not null, verificationid text not null);
+
+create table images (id int auto_increment primary key, title varchar(100) not null, relative_path text not     null, subheader varchar(100), description text not null, alternative varchar(100) not null, shown boolean default 0 not null);
+
+
