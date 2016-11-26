@@ -6,6 +6,7 @@ require_once "../src/UserController.php";
 
 
 class UserTest extends GenericDatabaseTest{
+
     public function testUserCreated(){
         $userCtl = new UserController;
         //test creation of new user
@@ -45,17 +46,18 @@ class UserTest extends GenericDatabaseTest{
         $this->assertNotEquals($success, TRUE, "ERROR: ".$success);
 
         //verify account
-        $user = $userCtl->getUser("verified");
+        $user = $userCtl->getUser("login");
         $success = $userCtl->verify($user->getName(), $user->getVerificationId());
+        $this->assertTrue($success, "ERROR: ".$success);
  
 
         //successful login
         $success = $userCtl->login("login", "password");
-        $this->assertEquals($_SESSION['username'], "login", "ERROR: ".$success);
+        $this->assertTrue($success, "ERROR: Failed login that shoudl work");
 
         //failed login
         $success = $userCtl->login("login", "randomek");
-        $this->assertEquals($success, TRUE, "ERROR: ".$success);
+        $this->assertFalse($success, "ERROR: ".$success);
    
     }
 }

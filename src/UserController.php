@@ -38,6 +38,8 @@ class UserController extends DatabaseConnection{
         } catch (PDOException $e) {
         
             $error =  $e->getMessage();
+            return FALSE;
+
         }
     
     }
@@ -58,8 +60,17 @@ class UserController extends DatabaseConnection{
  
         return $success;
     }
-    public function login(){
-    
+    public function login($name, $password){
+
+        $user = $this->getUser($name);
+        if ( $user && $user->isVerified() && $user->checkPassword($password) ){
+        
+            session_start();
+            $_SESSION['username'] = $name;
+            return TRUE;
+        }
+        return FALSE;
+        
     }
 }
 
