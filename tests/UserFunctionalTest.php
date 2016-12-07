@@ -28,6 +28,7 @@ class UserFunctionalTest extends GenericDatabaseTest{
 
         $this->webDriver = RemoteWebDriver::create($host, $capabilities, 5000);
 
+
         //create a verified user with name jane and password password for testing
         $user = new UserController;
         $user->create("jane","jane@jane.com","password");
@@ -128,8 +129,8 @@ class UserFunctionalTest extends GenericDatabaseTest{
         //She clicks on all images and the new image is shown in the system
         
         $this->webDriver->findElement(WebDriverBy::id("edit_images"))->click();
-        $contents = $this->webDriver->findElement(WebDriverBy::className("lead"))->getText();
-        $this->assertContains("Random doodles",$contents);
+        $contents = $this->webDriver->findElement(WebDriverBy::id("image_title_for_test"))->getText();
+        $this->assertContains("doodles",$contents);
 
         //She then opts to edit the image uploaded
         //She clicks on edit image

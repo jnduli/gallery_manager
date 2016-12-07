@@ -38,7 +38,7 @@ include "header_menu.php";
                        foreach($images as $image):?>
                        <div class="column">
                            <div class="callout">
-                               <p><?php echo $image['title'];?></p>
+                               <p id="image_title_for_test"><?php echo $image['title'];?></p>
                                <p><img src="<?php echo $image['image_link'];?>" alt="Transformer Installation"></p>
                                <p class="lead"><?php echo $image['contents'];?></p> 
                                <p class="subheader"><?php echo $image['description'];?></p>
