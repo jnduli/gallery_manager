@@ -77,6 +77,23 @@ class ImageHandler extends DatabaseConnection{
         return $success;
 
     }
+    public function getImages(){
+
+        try{
+
+            $query = $this->conn->prepare("SELECT * FROM ".$this->tbl_images );
+            $query->execute();
+            $result = $query->fetchAll();
+            return $result;
+        
+        } catch (PDOException $e) {
+        
+            $error =  $e->getMessage();
+            return FALSE;
+        }
+ 
+    }
+
 
 
 }
