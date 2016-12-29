@@ -1,7 +1,9 @@
 <?php
 
-require_once "DatabaseConnection.php";
-require_once "Image.php";
+namespace Gallery\controllers;
+
+
+use Gallery\models\Image;
 
 class ImageHandler extends DatabaseConnection{
 

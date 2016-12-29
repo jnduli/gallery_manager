@@ -1,5 +1,5 @@
 <?php
-include "header.php";
+include "modular_views/header.php";
 ?>
 
 <div class="row">
@@ -32,6 +32,6 @@ include "scripts.php";
 ?>
 <script src="assets/js/login.js"></script>
 <?php
-include "footer.php";
+include "modular_views/footer.php";
 ?>
 

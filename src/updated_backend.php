@@ -1,8 +1,8 @@
 <?php   
 require "loginheader.php"; 
 
-require_once "ImageHandler.php";
-require_once "config.php";
+require_once "controllers/ImageHandler.php";
+require_once "controllers/config.php";
 
 $imagehandler = new ImageHandler;
 

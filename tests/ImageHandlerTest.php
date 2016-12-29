@@ -1,8 +1,9 @@
 <?php
 //use PHPUnit\Framework\TestCase;
 
+use Gallery\controllers\ImageHandler;
+
 require_once "GenericDatabaseTest.php";
-require_once "../src/ImageHandler.php";
 
 class ImageHandlerTest extends GenericDatabaseTest{
 

@@ -1,6 +1,6 @@
 <?php
 require "loginheader.php";
-require_once "ImageHandler.php";
+require_once "controllers/ImageHandler.php";
 $imagehandler = new ImageHandler;
 
 if(!isset($shown)){
@@ -40,9 +40,9 @@ include "header_menu.php";
                            <div class="callout">
                                <p id="image_title_for_test"><?php echo $image['title'];?></p>
                                <p><img src="<?php echo $image['image_link'];?>" alt="Transformer Installation"></p>
-                               <p class="lead"><?php echo $image['contents'];?></p> 
+                               <p class="lead"><?php echo $image['subheader'];?></p> 
                                <p class="subheader"><?php echo $image['description'];?></p>
-                               <a href="update_image.php?id=<?php echo $image['id'];?>" classs="button">EDIT IMAGE</a>
+                               <a href="update_image.php?id=<?php echo $image['id'];?>" class="button">EDIT IMAGE</a>
                            </div>
                        </div>
 

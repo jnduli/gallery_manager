@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 require_once "GenericDatabaseTest.php";
-require_once "../src/UserController.php";
+require_once "../src/controllers/UserController.php";
 
 use Facebook\WebDriver\Remote\RemoteWebDriver;
 use Facebook\WebDriver\Remote\DesiredCapabilities;
@@ -123,19 +123,44 @@ class UserFunctionalTest extends GenericDatabaseTest{
         //A message showing the same is produced
 
         $msg = $this->webDriver->findElement(WebDriverBy::id("msg_submit"))->getText();
-        $this->webDriver->manage()->timeouts()->implicitlyWait(20000);
-        $this->assertContains("Success", $msg);
+        $this->webDriver->wait(10,500)->until(
+            WebDriverExpectedCondition::textToBePresentInElement(WebDriverBy::id("msg_submit"), "Success")
+        );
+
+
+        //$this->webDriver->manage()->timeouts()->implicitlyWait(20000);
+        //$this->assertContains("Success", $msg);
 
         //She clicks on all images and the new image is shown in the system
         
         $this->webDriver->findElement(WebDriverBy::id("edit_images"))->click();
-        $contents = $this->webDriver->findElement(WebDriverBy::id("image_title_for_test"))->getText();
-        $this->assertContains("doodles",$contents);
+        $this->webDriver->wait(20,500)->until(function ($driver) {
+            return $driver->getCurrentURL() === $this->url."/view_images.php";
+        });
+
+        $contents = $this->webDriver->findElement(WebDriverBy::cssSelector(".callout .lead"))->getText();
+        $this->assertContains("Random doodles",$contents);
 
         //She then opts to edit the image uploaded
         //She clicks on edit image
         //SHe then changes the title of the image to something else
         //She clicks update image and a message confirming the change is shown
+        
+        $oldPage = $this->webDriver->findElement(WebDriverBy::tagName("html"));
+        $this->webDriver->findElement(WebDriverBy::cssSelector(".callout a"))->click();
+        $this->webDriver->wait(10, 500)->until(
+            WebDriverExpectedCondition::stalenessof($oldPage)
+        );
+
+        $title = $this->webDriver->findElement(webDriverBy::id("page_title"))->getText();
+        $this->assertContains($title, "Edit Image");
+        $this->webDriver->findElement(WebDriverBy::id("title"))->sendKeys("new random");
+        $this->webDriver->findElement(WebDriverBy::id("submit"))->click();
+        $msg = $this->webDriver->findElement(WebDriverBy::id("msg_submit"))->getText();
+        $this->webDriver->wait(10,500)->until(
+            WebDriverExpectedCondition::textToBePresentInElement(WebDriverBy::id("msg_submit"), "Success")
+        );
+
         //She then clicks all images and confirms the change
         //She logs out of the system
     

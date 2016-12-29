@@ -1,8 +1,8 @@
 <?php
 include "loginheader.php";
-include "header.php";
-include "header_menu.php";
-include "ImageHandler.php";
+include "modular_views/header.php";
+include "modular_views/header_menu.php";
+include "controllers/ImageHandler.php";
 
 $id = $_GET['id'];
 $imageHandler = new ImageHandler;
@@ -77,5 +77,5 @@ include "scripts.php";
 <script src="assets/js/update.js"></script>
 
 <?php
-include "footer.php";
+include "modular_views/footer.php";
 ?>

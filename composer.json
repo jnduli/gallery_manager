@@ -1,4 +1,9 @@
 {
+    "autoload": {
+        "psr-4":  {
+            "Gallery\\": "src/"
+        }
+    },
     "require-dev": {
         "facebook/webdriver": "^1.2"
     }

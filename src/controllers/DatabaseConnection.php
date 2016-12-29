@@ -1,4 +1,6 @@
 <?php
+namespace Gallery\controllers;
+
 class DatabaseConnection{
 
     public $conn;
@@ -6,7 +8,7 @@ class DatabaseConnection{
     public $tbl_images;
 
     public function __construct(){
-        include "config.php";
+        include($_SERVER('DOCUMENT_ROOT').'config.php');
         $this->tbl_users = $tbl_users;
         $this->tbl_images = $tbl_images;
         $this->conn = new PDO('mysql:host='.$host.';dbname='.$dbname.';charset=utf8', $username, $password);

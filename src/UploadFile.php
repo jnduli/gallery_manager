@@ -6,7 +6,7 @@ class UploadFile{
     public $upload_file;
     
     public function uploadFile(){
-        include "config.php";
+        include "controllers/config.php";
         $image = $_FILES['image'];
     
         if ($this->checkImageErrors($image['error'])){
@@ -16,8 +16,6 @@ class UploadFile{
         if ( !$this->checkIfImage(getimagesize($image['tmp_name'])) ){
             return False;
         } 
-
-        echo "Here I am" . "\n";
 
         $upload_file = $upload_dir . basename($image['name']);
 

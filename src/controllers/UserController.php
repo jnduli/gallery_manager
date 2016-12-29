@@ -1,6 +1,8 @@
 <?php
-require_once "User.php";
-require_once "DatabaseConnection.php";
+namespace Gallery\controllers;
+
+use Gallery\models\User;
+
 class UserController extends DatabaseConnection{
     public $error;
 

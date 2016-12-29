@@ -1,4 +1,6 @@
 <?php
+namespace Gallery\models;
+
 class Image{
     private $id;
     private $title;

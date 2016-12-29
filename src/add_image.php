@@ -1,7 +1,7 @@
 <?php
 include "loginheader.php";
-include "header.php";
-include "header_menu.php";
+include "modular_views/header.php";
+include "modular_views/header_menu.php";
 ?>
 
 <div id="page_title" class="row">
@@ -67,5 +67,5 @@ include "scripts.php";
 <script src="assets/js/upload.js"></script>
 
 <?php
-include "footer.php";
+include "modular_views/footer.php";
 ?>

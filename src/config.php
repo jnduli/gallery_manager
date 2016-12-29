@@ -17,7 +17,7 @@ if($test_environment){
 $tbl_users = "users";
 
 //settings for the upload file directories
-$upload_dir = __DIR__. "/uploaded_images/";
+$upload_dir = __DIR__. "/../uploaded_images/";
 //$upload_dir = "/uploaded_images/";
 $relative_dir = "/uploaded_images/";
 ?>

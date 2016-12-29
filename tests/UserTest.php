@@ -1,8 +1,12 @@
 <?php
 use PHPUnit\Framework\TestCase;
+
+
+use Gallery\controllers\UserController;
+use Gallery\models\User;
 require_once "GenericDatabaseTest.php";
-require_once "../src/User.php";
-require_once "../src/UserController.php";
+//require_once "../src/controllers/User.php";
+//require_once "../src/controllers/UserController.php";
 
 
 class UserTest extends GenericDatabaseTest{
