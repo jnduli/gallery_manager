@@ -1,3 +1,4 @@
 vendor/
 *.swp
 src/uploaded_images/*
+composer.lock

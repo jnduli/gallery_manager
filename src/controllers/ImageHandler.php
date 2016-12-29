@@ -4,6 +4,7 @@ namespace Gallery\controllers;
 
 
 use Gallery\models\Image;
+use PDO;
 
 class ImageHandler extends DatabaseConnection{
 

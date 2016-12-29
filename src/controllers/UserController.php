@@ -2,6 +2,7 @@
 namespace Gallery\controllers;
 
 use Gallery\models\User;
+use PDO;
 
 class UserController extends DatabaseConnection{
     public $error;

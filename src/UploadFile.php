@@ -6,7 +6,7 @@ class UploadFile{
     public $upload_file;
     
     public function uploadFile(){
-        include "controllers/config.php";
+        include("config.php");
         $image = $_FILES['image'];
     
         if ($this->checkImageErrors($image['error'])){

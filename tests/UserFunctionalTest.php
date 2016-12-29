@@ -2,13 +2,14 @@
 
 use PHPUnit\Framework\TestCase;
 require_once "GenericDatabaseTest.php";
-require_once "../src/controllers/UserController.php";
 
 use Facebook\WebDriver\Remote\RemoteWebDriver;
 use Facebook\WebDriver\Remote\DesiredCapabilities;
 use Facebook\WebDriver\WebDriverBy;
 use Facebook\WebDriver\WebDriverExpectedCondition;
 use Facebook\WebDriver\Remote\LocalFileDetector;
+
+use Gallery\controllers\UserController;
 
 
 
