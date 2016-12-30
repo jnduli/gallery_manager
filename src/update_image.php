@@ -1,8 +1,11 @@
 <?php
+
+require "../vendor/autoload.php";
+
+use Gallery\controllers\ImageHandler;
 include "loginheader.php";
 include "modular_views/header.php";
 include "modular_views/header_menu.php";
-include "controllers/ImageHandler.php";
 
 $id = $_GET['id'];
 $imageHandler = new ImageHandler;

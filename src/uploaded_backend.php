@@ -1,8 +1,9 @@
 <?php   
 require "loginheader.php"; 
+require "../vendor/autoload.php";
+require_once "config.php";
 
-require_once "controllers/ImageHandler.php";
-require_once "controllers/config.php";
+use Gallery\controllers\ImageHandler;
 
 $imagehandler = new ImageHandler;
 $image_title = $_POST['title'];

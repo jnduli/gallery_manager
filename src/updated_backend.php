@@ -1,8 +1,11 @@
 <?php   
-require "loginheader.php"; 
 
-require_once "controllers/ImageHandler.php";
-require_once "controllers/config.php";
+require "../vendor/autoload.php";
+
+use Gallery\controllers\ImageHandler;
+
+require "loginheader.php"; 
+require "config.php";
 
 $imagehandler = new ImageHandler;
 

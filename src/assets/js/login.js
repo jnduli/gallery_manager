@@ -14,12 +14,12 @@ $(document).ready(function(){
             
             },
             error: function(error){
-                console.log($(this).attr('action'));
+                console.log($('#login_form').attr('action'));
                 console.log(error);
 //                alert("something wrong happened");
             },
             beforeSend: function(){
-                $('message').html("<p class='text-center'><img src='assets/img/ajax-loader.gif'></p>");
+                $('#message').html("<p class='text-center'><img src='assets/img/ajax-loader.gif'></p>");
             }
         });
     });

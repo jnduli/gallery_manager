@@ -75,6 +75,10 @@ class UserController extends DatabaseConnection{
         return FALSE;
         
     }
+
+    public function test(){
+        echo "UserControlee wokrs";
+    }
 }
 
 ?>

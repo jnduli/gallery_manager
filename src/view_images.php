@@ -1,6 +1,9 @@
 <?php
 require "loginheader.php";
-require_once "controllers/ImageHandler.php";
+require "../vendor/autoload.php";
+
+use Gallery\controllers\ImageHandler;
+
 $imagehandler = new ImageHandler;
 
 if(!isset($shown)){
